@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "mossfixcommon",
+  "version": "${version}",
+  "name": "Moss Fix",
+  "description": "",
+  "authors": [
+    "gamma_02"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "gamma02.mossfixcommon.fabric.MossFixFabric"
+    ]
+  },
+  "mixins": [
+    "mossfixcommon.mixins.json",
+    "mossfixcommon-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "minecraft": ">=1.19.2"
+  }
+}

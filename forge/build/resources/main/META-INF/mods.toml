@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[44,)"
+#issueTrackerURL = ""
+license = "Insert License Here"
+
+[[mods]]
+modId = "mossfixcommon"
+version = "1.0.0"
+displayName = "Moss Fix"
+authors = "Gamma_02"
+description = '''
+This mod patches moss to be better than the bare minimum required for a functional feature
+'''
+#logoFile = ""
+
+[[dependencies.examplemod]]
+modId = "forge"
+mandatory = true
+versionRange = "[44,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.examplemod]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19.3,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.examplemod]]
+modId = "architectury"
+mandatory = true
+versionRange = "[7.1.78,)"
+ordering = "AFTER"
+side = "BOTH"

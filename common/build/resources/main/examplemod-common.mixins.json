@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "gamma02.mossfixcommon.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "client": [
+  ],
+  "mixins": [
+    "CaveFeaturesMixin",
+    "MossBlockMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

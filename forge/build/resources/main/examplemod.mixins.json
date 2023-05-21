@@ -1,12 +1,11 @@
 {
   "required": true,
-  "minVersion": "0.8",
-  "package": "gamma02.mossfixcommon.mixin_common",
+  "package": "net.gamma02.mixin.forge",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [
-    "MossBlockMixin"
-  ],
+  "minVersion": "0.8",
   "client": [
+  ],
+  "mixins": [
   ],
   "injectors": {
     "defaultRequire": 1

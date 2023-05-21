@@ -1,0 +1,20 @@
+{
+  "mappings": {
+    "gamma02/mossfixcommon/mixin/MossBlockMixin": {
+      "isValidBonemealTarget": "Lnet/minecraft/class_5807;method_9651(Lnet/minecraft/class_4538;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;Z)Z"
+    },
+    "gamma02/mossfixcommon/mixin/MixinTitleScreen": {
+      "init()V": "Lnet/minecraft/class_442;method_25426()V"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "gamma02/mossfixcommon/mixin/MossBlockMixin": {
+        "isValidBonemealTarget": "Lnet/minecraft/class_5807;method_9651(Lnet/minecraft/class_4538;Lnet/minecraft/class_2338;Lnet/minecraft/class_2680;Z)Z"
+      },
+      "gamma02/mossfixcommon/mixin/MixinTitleScreen": {
+        "init()V": "Lnet/minecraft/class_442;method_25426()V"
+      }
+    }
+  }
+}

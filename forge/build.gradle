@@ -14,8 +14,8 @@ loom {
         convertAccessWideners = true
         extraAccessWideners.add loom.accessWidenerPath.get().asFile.name
 
-        mixinConfig "examplemod-common.mixins.json"
-        mixinConfig "examplemod.mixins.json"
+        mixinConfig "mossfix-common.mixins.json"
+        mixinConfig "mossfix.mixins.json"
     }
 }
 
@@ -60,6 +60,7 @@ remapJar {
 
 jar {
     classifier "dev"
+
 }
 
 sourcesJar {

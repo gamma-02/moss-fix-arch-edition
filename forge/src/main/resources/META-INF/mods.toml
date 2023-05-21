@@ -4,7 +4,7 @@ loaderVersion = "[44,)"
 license = "Insert License Here"
 
 [[mods]]
-modId = "mossfixcommon"
+modId = "mossfix"
 version = "${version}"
 displayName = "Moss Fix"
 authors = "Gamma_02"
@@ -13,21 +13,21 @@ This mod patches moss to be better than the bare minimum required for a function
 '''
 #logoFile = ""
 
-[[dependencies.mossfixcommon]]
+[[dependencies.mossfix]]
 modId = "forge"
 mandatory = true
 versionRange = "[44,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.mossfixcommon]]
+[[dependencies.mossfix]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.19.3,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.mossfixcommon]]
+[[dependencies.mossfix]]
 modId = "architectury"
 mandatory = true
 versionRange = "[7.1.78,)"

@@ -3,15 +3,15 @@
   "id": "mossfix",
   "version": "${version}",
   "name": "Moss Fix",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "description": "This mod fixes moss :D",
   "authors": [
-    "Me!"
+    "Gamma_02"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
     "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
-  "license": "Insert License Here",
+  "license": "MIT",
   "icon": "assets/mossfixcommon/icon.png",
   "environment": "*",
   "entrypoints": {
@@ -24,7 +24,7 @@
   ],
   "depends": {
     "fabric": "*",
-    "minecraft": ">=1.19.3",
+    "minecraft": ">=1.19.4",
     "architectury": ">=7.1.78"
   }
 }

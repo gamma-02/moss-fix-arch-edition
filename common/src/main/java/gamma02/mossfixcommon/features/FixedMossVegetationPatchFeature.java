@@ -69,7 +69,6 @@ public class FixedMossVegetationPatchFeature extends Feature<VegetationPatchConf
                     for(k = 0; !canGenerateUnderBlock(world, mutable) && k < config.verticalRange; ++k) {
                         mutable.move(direction2);
                     }
-                    System.out.println(canGenerateUnderBlock(world, mutable) + " :generate, block: " + world.getBlockState(mutable));
 
 
                     mutable2.setWithOffset(mutable, (Direction)config.surface.getDirection());

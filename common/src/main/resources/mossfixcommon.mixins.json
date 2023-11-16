@@ -6,7 +6,6 @@
   "client": [
   ],
   "mixins": [
-    "CaveFeaturesMixin",
     "MossBlockMixin"
   ],
   "injectors": {

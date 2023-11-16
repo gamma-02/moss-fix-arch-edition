@@ -1,8 +1,6 @@
 package gamma02.mossfixcommon.features;
 
 
-import net.minecraft.world.level.levelgen.feature.Feature;
-
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -15,15 +13,14 @@ import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.VegetationPatchConfiguration;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Random;
 import java.util.Set;
 import java.util.function.Predicate;
 
 public class FixedMossVegetationPatchFeature extends Feature<VegetationPatchConfiguration> {
+
+
     public FixedMossVegetationPatchFeature(Codec<VegetationPatchConfiguration> codec) {
         super(codec);
     }
@@ -48,7 +45,7 @@ public class FixedMossVegetationPatchFeature extends Feature<VegetationPatchConf
         BlockPos.MutableBlockPos mutable2 = mutable.mutable();
         Direction direction = config.surface.getDirection();
         Direction direction2 = direction.getOpposite();
-        Set<BlockPos> set = new HashSet();
+        Set<BlockPos> set = new HashSet<>();
 
         for(int xRaidusIterator = -radiusX; xRaidusIterator <= radiusX; ++xRaidusIterator) {
             boolean reachedEndOrBeginnnng = xRaidusIterator == -radiusX || xRaidusIterator == radiusX;
@@ -71,11 +68,10 @@ public class FixedMossVegetationPatchFeature extends Feature<VegetationPatchConf
                     }
 
 
-                    mutable2.setWithOffset(mutable, (Direction)config.surface.getDirection());
-                    BlockState blockState = world.getBlockState(mutable2);
+                    mutable2.setWithOffset(mutable, config.surface.getDirection());
+//                    BlockState blockState = world.getBlockState(mutable2);
                     if (
-                            canGenerateUnderBlock(world, mutable) &&
-                                    /*blockState.isSideSolidFullSquare(world, mutable2, config.surface.getDirection().getOpposite())*/ true) {
+                            canGenerateUnderBlock(world, mutable) /*&& blockState.isSideSolidFullSquare(world, mutable2, config.surface.getDirection().getOpposite())*/) {
                         int l = config.depth.sample(random) + (config.extraBottomBlockChance > 0.0F && random.nextFloat() < config.extraBottomBlockChance ? 1 : 0);
                         BlockPos blockPos = mutable2.immutable();
                         boolean bl6 = this.placeGround(world, config, replaceable, random, mutable2, l);
@@ -91,10 +87,9 @@ public class FixedMossVegetationPatchFeature extends Feature<VegetationPatchConf
     }
 
     protected void generateVegetation(FeaturePlaceContext<VegetationPatchConfiguration> context, WorldGenLevel world, VegetationPatchConfiguration config, RandomSource random, Set<BlockPos> positions, int radiusX, int radiusZ) {
-        Iterator var8 = positions.iterator();
 
-        while(var8.hasNext()) {
-            BlockPos blockPos = (BlockPos)var8.next();
+
+        for (BlockPos blockPos : positions) {
             if (config.vegetationChance > 0.0F && random.nextFloat() < config.vegetationChance) {
                 this.generateVegetationFeature(world, config, context.chunkGenerator(), random, blockPos);
             }
@@ -102,11 +97,10 @@ public class FixedMossVegetationPatchFeature extends Feature<VegetationPatchConf
 
     }
 
-    protected boolean generateVegetationFeature(WorldGenLevel world, VegetationPatchConfiguration config, ChunkGenerator generator, RandomSource random, BlockPos pos) {
+    protected void generateVegetationFeature(WorldGenLevel world, VegetationPatchConfiguration config, ChunkGenerator generator, RandomSource random, BlockPos pos) {
         if(world.getBlockState(pos.relative(config.surface.getDirection().getOpposite())).isAir()) {
-            return ((PlacedFeature) config.vegetationFeature.value()).place(world, generator, random, pos.relative(config.surface.getDirection().getOpposite()));
+            ( config.vegetationFeature.value()).place(world, generator, random, pos.relative(config.surface.getDirection().getOpposite()));
         }
-        return false;
     }
 
     protected boolean placeGround(WorldGenLevel world, VegetationPatchConfiguration config, Predicate<BlockState> replaceable, RandomSource random, BlockPos.MutableBlockPos pos, int depth) {

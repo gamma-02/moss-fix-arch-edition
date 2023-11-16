@@ -41,11 +41,7 @@ public class MossFix {
 
     public static void init() {
 
-        LifecycleEvent.SETUP.register(() ->{
-            MossWG.init();
-
-
-        });
+        LifecycleEvent.SETUP.register(MossWG::init);
 
     }
 }

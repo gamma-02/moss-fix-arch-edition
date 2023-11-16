@@ -23,13 +23,13 @@ side = "BOTH"
 [[dependencies.mossfix]]
 modId = "minecraft"
 mandatory = true
-versionRange = "[1.19.3,)"
+versionRange = "[1.20,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.mossfix]]
 modId = "architectury"
 mandatory = true
-versionRange = "[7.1.78,)"
+versionRange = "[10.0.9,)"
 ordering = "AFTER"
 side = "BOTH"
